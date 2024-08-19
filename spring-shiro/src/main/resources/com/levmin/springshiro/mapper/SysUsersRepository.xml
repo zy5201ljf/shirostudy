@@ -1,0 +1,12 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd" >
+<mapper namespace="com.levmin.springshiro.mapper.SysUsersRepository" >
+
+    <select id="findRolesByUser" parameterType="com.levmin.springshiro.entity.SysUsers" resultType="java.lang.String">
+        select sysrole.role from sys_users user,sys_roles sysrole,sys_users_roles user_role
+        where
+            user.username = #{username,jdbcType=VARCHAR}
+            and user.id = user_role.user_id
+            and user_role.role_id = sysrole.id;
+    </select>
+</mapper>
