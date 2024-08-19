@@ -3,7 +3,6 @@ package com.levmin.shiro.dao;
 import com.levmin.shiro.util.JdbcTemplateUtils;
 import com.levmin.shiro.util.SerializableUtils;
 import org.apache.shiro.session.Session;
-import org.apache.shiro.session.mgt.SimpleSession;
 import org.apache.shiro.session.mgt.ValidatingSession;
 import org.apache.shiro.session.mgt.eis.CachingSessionDAO;
 import org.springframework.jdbc.core.JdbcTemplate;
