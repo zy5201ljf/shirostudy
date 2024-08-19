@@ -15,4 +15,5 @@ public interface SysUsersService {
 
     public SysUsers findByUsername(String username);
 
+    String test(String msg);
 }

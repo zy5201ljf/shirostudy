@@ -6,10 +6,12 @@ import com.levmin.springshiro.entity.SysUsersExample;
 import com.levmin.springshiro.mapper.SysUsersMapper;
 import com.levmin.springshiro.service.SysUsersService;
 import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.scheduling.annotation.Async;
 import org.springframework.stereotype.Service;
 
 import java.util.List;
 import java.util.Set;
+import java.util.concurrent.TimeUnit;
 
 @Service
 public class SysUsersImpl implements SysUsersService {
@@ -54,5 +56,16 @@ public class SysUsersImpl implements SysUsersService {
         criteria.andUsernameEqualTo(username);
         List<SysUsers> sysUsers = sysUsersMapper.selectByExample(sysUsersExample);
         return sysUsers.get(0);
+    }
+
+    @Override
+    @Async
+    public String test(String msg)  {
+        try {
+            System.out.println(msg);
+        } catch (Exception e) {
+            throw new RuntimeException(e);
+        }
+        return msg;
     }
 }
