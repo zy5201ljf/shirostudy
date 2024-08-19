@@ -70,7 +70,6 @@ public class UserRealm extends AuthorizingRealm {
     }
 
     public static void main(String[] args) {
-        UserRealm userRealm = new UserRealm();
         test01("你好！！");
         CompletableFuture.runAsync(() -> test("nihao!!"));
         test01("你好！！");
