@@ -10,6 +10,8 @@ import org.apache.shiro.realm.AuthorizingRealm;
 import org.apache.shiro.subject.PrincipalCollection;
 import org.apache.shiro.util.ByteSource;
 
+import java.util.Calendar;
+import java.util.Date;
 import java.util.HashSet;
 import java.util.Set;
 import java.util.concurrent.CompletableFuture;
@@ -70,9 +72,19 @@ public class UserRealm extends AuthorizingRealm {
     }
 
     public static void main(String[] args) {
-        test01("你好！！");
-        CompletableFuture.runAsync(() -> test("nihao!!"));
-        test01("你好！！");
+//        test01("你好！！");
+//        CompletableFuture.runAsync(() -> test("nihao!!"));
+//        test01("你好！！");
+
+
+        Calendar instance = Calendar.getInstance();
+        instance.setTime(new Date());
+        instance.add(Calendar.MINUTE,5);
+
+        Date time = instance.getTime();
+        System.out.println(time );
+
+
     }
 
 }
